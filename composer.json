@@ -1,0 +1,21 @@
+{
+    "name": "viragrajput/viragcontainer",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ViragContainer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ViragRajput",
+            "email": "108286928+ViragRajput@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    }
+}
