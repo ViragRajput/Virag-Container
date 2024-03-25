@@ -13,6 +13,7 @@ $container->bind('Logger', Logger::class);
 // Resolving the bound class
 $logger = $container->make('Logger');
 ```
+In this example, we create a new container instance, bind the Logger class to the container, and then resolve it using the make method. This demonstrates the fundamental process of binding dependencies to the container and resolving them when needed.
 
 ### 2. Singleton Binding
 ```php
@@ -27,6 +28,7 @@ $container->singleton('Config', Config::class);
 // Resolving the singleton instance
 $config = $container->make('Config');
 ```
+In this example, we create a new container instance and bind the Config class as a singleton to the container using the singleton method. Later, when we resolve the Config class using the make method, the container will always return the same instance of Config, ensuring that only one instance of Config is ever created and reused throughout the application.
 
 ### 3. Binding with Custom Resolver
 ```php
@@ -43,6 +45,7 @@ $container->registerCustomResolver('Db', function($container) {
 // Resolving the bound class using the custom resolver
 $dbConnection = $container->make('Db');
 ```
+In this example, we define a custom resolver for the Db class using the registerCustomResolver method. The custom resolver is a closure that receives the container instance as a parameter. Inside the closure, we manually resolve the Config class from the container and use it to instantiate the DbConnection class. Finally, when we resolve the Db class using the make method, the custom resolver is invoked, and the DbConnection instance is returned.
 
 ### 4. Contextual Binding
 ```php
@@ -59,6 +62,7 @@ $container->when('Mailer', function($container) {
 // Resolving the bound class
 $mailer = $container->make('Mailer');
 ```
+In this example, we use the `when` method to define contextual binding for the `Mailer` class. We specify that when resolving the `Mailer` class, it should resolve to the `SmtpMailer` class, which implements the `MailerInterface`. When we call `make('Mailer')`, the container resolves the `Mailer` class according to the defined contextual binding, and an instance of `SmtpMailer` is returned.
 
 ### 5. Binding with Factory
 ```php
@@ -75,8 +79,10 @@ $container->bindFactory('HttpClient', function($container) {
 // Resolving the instance using the factory
 $http = $container->factory('HttpClient');
 ```
+In this example, we use the `bindFactory` method to bind the `HttpClient` class to a factory closure. When we call `factory('HttpClient')`, the container resolves the instance using the factory closure, which creates a new instance of `HttpClient` with the appropriate configuration.
 
 ### 6. Auto Wiring
+
 ```php
 use Virag\Container\Container;
 
@@ -89,6 +95,7 @@ $container->enableAutoWiring();
 // Resolving a class using auto wiring
 $service = $container->make(MyService::class);
 ```
+In this example, we enable auto wiring by calling the `enableAutoWiring` method on the container instance. Then, when we call `make(MyService::class)`, the container automatically resolves the dependencies of `MyService` using reflection and instantiates the class accordingly.
 
 
 ### 7. Adding Service Providers
@@ -105,6 +112,7 @@ $container->addServiceProvider(DatabaseProvider::class);
 // Resolving a service provided by the added provider
 $database = $container->make('Database');
 ```
+In this example, we create a new container instance and add a service provider `DatabaseProvider` using the `addServiceProvider` method. The service provider is responsible for registering services with the container. After adding the provider, we can resolve services provided by it using the `make` method. Here, we resolve a service named `'Database'` provided by the `DatabaseProvider`.
 
 ### 8. Tagging Services
 ```php
