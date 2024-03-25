@@ -1,17 +1,17 @@
-# ViragContainer
+# Virag Container
 
-ViragContainer is a versatile and lightweight dependency injection container designed to streamline the management of class dependencies and service resolution within PHP applications. 
+Virag Container is a versatile and lightweight dependency injection container designed to streamline the management of class dependencies and service resolution within PHP applications. 
 
-With ViragContainer, you gain access to a comprehensive set of features essential for effective dependency management. This includes binding classes and interfaces to concrete implementations, resolving dependencies, defining singleton bindings, and managing contextual bindings. Additionally, advanced functionalities such as service providers, custom resolvers, inflectors, auto-wiring, and factories are seamlessly integrated, providing flexibility and extensibility.
+With Virag Container, you gain access to a comprehensive set of features essential for effective dependency management. This includes binding classes and interfaces to concrete implementations, resolving dependencies, defining singleton bindings, and managing contextual bindings. Additionally, advanced functionalities such as service providers, custom resolvers, inflectors, auto-wiring, and factories are seamlessly integrated, providing flexibility and extensibility.
 
-Moreover, ViragContainer is built with performance in mind, ensuring minimal overhead and optimal efficiency in your application. Whether you're building a small project or a large-scale application, ViragContainer offers the tools you need to organize and maintain your codebase effectively.
+Moreover, Virag Container is built with performance in mind, ensuring minimal overhead and optimal efficiency in your application. Whether you're building a small project or a large-scale application, Virag Container offers the tools you need to organize and maintain your codebase effectively.
 
 ## Installation
 
-You can install ViragContainer via Composer. Run the following command in your terminal:
+You can install Virag Container via Composer. Run the following command in your terminal:
 
 ```bash
-composer require viragrajput/viragcontainer
+composer require viragrajput/virag-container
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ composer require viragrajput/viragcontainer
 First, create an instance of the container:
 
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 $container = new Container();
 ```
@@ -130,11 +130,13 @@ $container->bindFactory('PaymentGateway', function ($container) {
     return new PaymentGateway($container->make('Config')->get('payment.gateway'));
 });
 ```
+## Examples: 
+Explore various usage examples of the Virag Container Package in the "Docs" folder within this repository. These examples cover a wide range of scenarios to help you understand how to utilize the features of the package effectively.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+We welcome contributions from the community! If you have any suggestions, find bugs, or want to add new features, please don't hesitate to submit issues or pull requests. Your contributions help improve the package for everyone. Let's build something great together!
 
 ## License
 
-ViragContainer is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Virag Container is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
