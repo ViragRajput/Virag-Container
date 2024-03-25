@@ -1,21 +1,26 @@
 {
-    "name": "viragrajput/viragcontainer",
+    "name": "viragrajput/virag-container",
+    "description": "A container package for dependency injection",
     "type": "library",
+    "keywords": ["dependency injection", "container", "inversion of control"],
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "ViragContainer\\": "src/"
+            "Virag\\Container\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "ViragRajput",
+            "name": "Virag Rajput",
             "email": "108286928+ViragRajput@users.noreply.github.com"
         }
     ],
-    "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9.0"
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

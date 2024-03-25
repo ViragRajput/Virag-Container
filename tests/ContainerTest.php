@@ -1,7 +1,8 @@
 <?php
 
+
+use Virag\Container\Container;
 use PHPUnit\Framework\TestCase;
-use ViragContainer\Container\Container;
 
 class ContainerTest extends TestCase
 {

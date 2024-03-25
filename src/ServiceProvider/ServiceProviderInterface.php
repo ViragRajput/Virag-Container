@@ -13,9 +13,9 @@
  * file that was distributed with this source code.
  */
 
-namespace ViragContainer\ServiceProvider;
+namespace Virag\Container\ServiceProvider;
 
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 interface ServiceProviderInterface
 {

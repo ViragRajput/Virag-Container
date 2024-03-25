@@ -2,7 +2,7 @@
 
 ### 1. Basic Binding and Resolution
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -16,7 +16,7 @@ $logger = $container->make('Logger');
 
 ### 2. Singleton Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -30,7 +30,7 @@ $config = $container->make('Config');
 
 ### 3. Binding with Custom Resolver
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -46,7 +46,7 @@ $dbConnection = $container->make('Db');
 
 ### 4. Contextual Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -62,7 +62,7 @@ $mailer = $container->make('Mailer');
 
 ### 5. Binding with Factory
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -78,7 +78,7 @@ $http = $container->factory('HttpClient');
 
 ### 6. Auto Wiring
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -93,7 +93,7 @@ $service = $container->make(MyService::class);
 
 ### 7. Adding Service Providers
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Providers\DatabaseProvider;
 
 // Create a new container instance
@@ -108,7 +108,7 @@ $database = $container->make('Database');
 
 ### 8. Tagging Services
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -122,7 +122,7 @@ $services = $container->getTagged('logging');
 
 ### 9. Using Inflectors
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -138,7 +138,7 @@ $service = $container->make('ConcreteService');
 
 ### 10. Sharing Instances
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Connection\DatabaseConnection;
 
 // Create a new container instance
@@ -153,7 +153,7 @@ $connection = $container->getSharedInstance('DatabaseConnection');
 
 ### 11. Alias Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -167,7 +167,7 @@ $database = $container->make('DB');
 
 ### 12. Binding Configuration Values
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -181,7 +181,7 @@ $debugMode = $container->getConfig('app.debug');
 
 ### 13. Resolving With Custom Context
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -197,7 +197,7 @@ $mailerForAdmin = $container->make('Mailer', ['user' => 'Admin']);
 
 ### 14. Conditional Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -219,7 +219,7 @@ $mailerForAdmin = $container->make('Mailer', ['user' => 'Admin']);
 
 ### 15. Using Factories with Parameters
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -235,7 +235,7 @@ $http = $container->factory('HttpClient', ['http://example.com']);
 
 ### 16. Dynamic Binding Configuration
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -268,7 +268,7 @@ $storage = $container->make('Storage');
 
 ### 17. Using Shared Instances with Context
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Connection\DatabaseConnection;
 
 // Create a new container instance
@@ -286,7 +286,7 @@ $connectionForRead = $container->getSharedInstance('DatabaseConnection');
 
 ### 18. Advanced Contextual Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -304,7 +304,7 @@ $mailerForAdmin = $container->make('Mailer', ['user' => 'Admin']);
 
 ### 19. Resolving Method Injection
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\PaymentService;
 
 // Create a new container instance
@@ -320,7 +320,7 @@ $result = $paymentService->processPayment($container->make('PaymentGateway'));
 
 ### 20. Using Configuration Values
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\MailService;
 
 // Create a new container instance
@@ -341,7 +341,7 @@ $mailService->setPort($container->getConfig('mail.port'));
 
 ### 21. Using Tags for Multiple Resolving
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\NotificationService;
 use App\Services\EmailService;
 use App\Services\SmsService;
@@ -363,7 +363,7 @@ $services = $container->getTagged('notification');
 
 ### 22. Using Lazy Loading
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\CacheService;
 
 // Create a new container instance
@@ -378,7 +378,7 @@ $cacheService = $container->factory('CacheService');
 
 ### 23. Using Custom Resolvers for Complex Dependencies
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\ComplexService;
 
 // Create a new container instance
@@ -395,34 +395,10 @@ $container->registerCustomResolver('ComplexService', function($container) {
 $complexService = $container->make('ComplexService');
 ```
 
-
-### 24. Resolving with Contextual Binding
+### 24. Using Delegate Container
 ```php
-use ViragContainer\Container\Container;
-use App\Services\NotificationService;
-use App\Services\EmailService;
-use App\Services\SmsService;
-
-// Create a new container instance
-$container = new Container();
-
-// Contextual binding based on environment
-$container->when('NotificationService', function($container) {
-    if ($container->getConfig('app.environment') === 'production') {
-        $container->needs('NotificationProvider', EmailService::class);
-    } else {
-        $container->needs('NotificationProvider', SmsService::class);
-    }
-});
-
-// Resolving based on contextual binding
-$notificationService = $container->make('NotificationService');
-```
-
-### 25. Using Delegate Container
-```php
-use ViragContainer\Container\Container;
-use ViragContainer\Container\DelegateContainer;
+use Virag\Container\Container;
+use Virag\Container\DelegateContainer;
 
 // Create a new container instance
 $container = new Container();
@@ -440,9 +416,9 @@ $container->setDelegateContainer($delegateContainer);
 $cacheService = $container->make('Cache');
 ```
 
-### 26. Using Factory with Dynamic Parameters
+### 25. Using Factory with Dynamic Parameters
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\PaymentGateway;
 
 // Create a new container instance
@@ -458,9 +434,9 @@ $paymentGatewayUSD = $container->factory('PaymentGateway', ['USD']);
 $paymentGatewayEUR = $container->factory('PaymentGateway', ['EUR']);
 ```
 
-### 27. Defining Inflectors for Interface Implementation
+### 26. Defining Inflectors for Interface Implementation
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -474,9 +450,9 @@ $container->addInflector('PaymentProviderInterface', function($paymentProvider) 
 $paymentProvider = $container->make('StripePaymentProvider');
 ```
 
-### 28. Using Shared Instances with Lazy Initialization
+### 27. Using Shared Instances with Lazy Initialization
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -490,9 +466,9 @@ $container->share('CacheService', function() {
 $cacheService = $container->getSharedInstance('CacheService');
 ```
 
-### 29. Using Factories with Configuration
+### 28. Using Factories with Configuration
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\MailService;
 
 // Create a new container instance
@@ -510,9 +486,9 @@ $mailService = $container->factory('MailService', [
 ]);
 ```
 
-### 30. Resolving With Factories in Contextual Binding
+### 29. Resolving With Factories in Contextual Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\MailService;
 use App\Services\SmsService;
 
@@ -541,9 +517,9 @@ $container->when('Notifier', function($container) {
 $notifier = $container->make('Notifier');
 ```
 
-### 31. Using Closures as Resolvers
+### 30. Using Closures as Resolvers
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 
 // Create a new container instance
 $container = new Container();
@@ -557,9 +533,9 @@ $container->bind('PaymentGateway', function($container) {
 $paymentGateway = $container->make('PaymentGateway');
 ```
 
-### 32. Using Tags with Contextual Binding
+### 31. Using Tags with Contextual Binding
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Services\NotificationService;
 use App\Services\EmailService;
 use App\Services\SmsService;
@@ -578,11 +554,11 @@ $container->when('Notifier', function($container) {
 // Resolving based on contextual binding with tags
 $notifier = $container->make('Notifier');
 ```
-### 33. using SetDelegateContainer
+### 32. using SetDelegateContainer
 
 ```php
-use ViragContainer\Container\Container;
-use ViragContainer\Container\DelegateContainer;
+use Virag\Container\Container;
+use Virag\Container\DelegateContainer;
 
 // Create a new container instance
 $container = new Container();
@@ -602,13 +578,13 @@ $container->setDelegateContainer($delegateContainer);
 $logger = $container->make('Logger'); // Resolves from delegate container
 $cache = $container->make('Cache');   // Resolves from delegate container
 ```
-### 34. Example Use of Service Provider
+### 33. Example Use of Service Provider
 
 Here's an example of how you can use `setDelegateContainer()` in a service provider:
 
 ```php
-use ViragContainer\Container\Container;
-use ViragContainer\Container\DelegateContainer;
+use Virag\Container\Container;
+use Virag\Container\DelegateContainer;
 
 class MyServiceProvider
 {
@@ -631,15 +607,15 @@ class MyServiceProvider
 }
 ```
 
-### 35. Register Multiple Services at once using service providers and set a delegate container
+### 34. Register Multiple Services at once using service providers and set a delegate container
 
 Here's an example demonstrating how you can register multiple services at once using service providers and set a delegate container:
 
 ```php
-use ViragContainer\Container\Container;
+use Virag\Container\Container;
 use App\Providers\AppServiceProvider;
 use App\Providers\ViewServiceProvider;
-use Container\ReflectionContainer;
+use Virag\Container\ReflectionContainer;
 
 // Create a new container instance
 $container = new Container();
@@ -653,4 +629,3 @@ $container->addServiceProvider(new ViewServiceProvider());
 
 // Now, your container is configured with all the registered services from the service providers
 ```
-
