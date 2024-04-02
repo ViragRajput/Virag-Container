@@ -269,9 +269,10 @@ class Container
         $resolvedParameters = [];
 
         foreach ($parameters as $parameter) {
-            if ($parameterClass = $parameter->getClass()) {
-                // Recursively resolve constructor parameters
-                $resolvedParameters[] = $this->make($parameterClass->getName());
+            $parameterType = $parameter->getType();
+
+            if ($parameterType && !$parameterType->isBuiltin()) {
+                $resolvedParameters[] = $this->make($parameterType->getName());
             } else {
                 // No type hint, use default value or null
                 $resolvedParameters[] = $this->resolveParameterDefaultValue($parameter);
