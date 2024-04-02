@@ -236,6 +236,11 @@ class Container
 
     protected function resolve($concrete)
     {
+        // Check if $concrete is null
+        if ($concrete === null) {
+            throw new \Exception("Cannot resolve null class.");
+        }
+        
         $reflector = new ReflectionClass($concrete);
 
         if (!$reflector->isInstantiable()) {
