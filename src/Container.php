@@ -35,6 +35,7 @@ class Container
     protected $contextualBindings = [];
     protected $currentContextualBinding = '';
     protected $factories = [];
+    protected static $instance;
 
     public function bind(string $key, $concrete, $shared = false)
     {
@@ -412,5 +413,21 @@ class Container
 
         // Handle not found case, for now, let's throw an exception
         throw new \Exception("Binding not found for key: {$realKey}");
+    }
+
+    // Added 2 new method supports
+
+    /**
+     * Get the global container instance.
+     *
+     * @return static
+     */
+    public static function getInstance()
+    {
+        if (is_null(static::$instance)) {
+            static::$instance = new static();
+        }
+
+        return static::$instance;
     }
 }
